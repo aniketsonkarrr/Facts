@@ -4,12 +4,23 @@ import "./index.css";
 import App from "./App.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./components/HomePage.jsx";
+import ToDoList from "./components/ToDoList.jsx";
 
 const app = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [],
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/todoapp",
+        element: <ToDoList />,
+      },
+    ],
     errorElement: <ErrorPage />,
   },
 ]);
