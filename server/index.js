@@ -13,7 +13,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(cors());
 app.use("/todo",router);
 
-
+app.use("*",(req,res,next)=>{
+    res.send("No route exits");
+    next();
+});
 
 app.listen(port,()=>{
     console.log("Server is running");
