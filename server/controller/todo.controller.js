@@ -31,7 +31,7 @@ const newTodo=(req,res)=>{
 
 
 const getTodo=(req,res)=>{
-    const {id}=req.params;
+    const {params:{id}}=req;
     pool.query("SELECT * FROM todo WHERE id = $1", [id])
     .then((result)=>{
         console.log(result);
