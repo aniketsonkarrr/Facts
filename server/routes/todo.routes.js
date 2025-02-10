@@ -3,7 +3,7 @@ import { getAllTodos,getTodo,newTodo,deleteTodo } from "../controller/todo.contr
 const router=Router();
 
 
-router.get("/",getAllTodos);
+router.get("/all",getAllTodos);
 
 router.post("/new",newTodo);
 
