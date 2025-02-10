@@ -16,7 +16,7 @@ const getAllTodos=(req,res)=>{
 
 
 const newTodo=(req,res)=>{
-    let {description}=req.body;
+    let {body:{description}}=req;
     pool.query("INSERT INTO todo(description) VALUES($1) RETURNING *",[description])
     .then((result)=>{
         console.log(result);
